@@ -11,8 +11,8 @@ int main(int argc, char const *argv[])
     double procento;
     char let, prev;
 
-    // while (scanf("%c", &let) != EOF) {
-    while (pocet < listCount) {
+    while (scanf("%c", &let) != EOF) {
+    // while (pocet < listCount) {
         
 
         if (pocet == 0) {
