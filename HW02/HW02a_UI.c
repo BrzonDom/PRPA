@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 void fun_HW02a_UI (int Input1, int Input2)	{
 
@@ -25,6 +24,7 @@ void fun_HW02a_UI (int Input1, int Input2)	{
 		printf("\n");
 
 }
+
 
 int main(int argc, char const *argv[])
 {
