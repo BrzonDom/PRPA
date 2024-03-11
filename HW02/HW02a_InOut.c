@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
 
 void fun_HW02a_InOut (char Inloc[], char Outloc[])	{
