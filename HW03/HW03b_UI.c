@@ -1,10 +1,7 @@
 
 #include <stdio.h>
-#include <math.h>
-#include <string.h>
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[])  {
 
     int num, pocet, prev;
         pocet = 0;
@@ -60,7 +57,8 @@ int main(int argc, char const *argv[])
     //         }
     //     }
     //     prev = num;
-    // }   
+    // }  
+
     return 0;
 
 }
