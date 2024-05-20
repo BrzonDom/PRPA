@@ -3,9 +3,9 @@
 
 void fun_HW02a_InOut (char Inloc[], char Outloc[])	{
 
-	// char Inloc[] = "data .in"; Inloc[4] = fname;
+		// char Inloc[] = "data .in"; Inloc[4] = fname;
 	FILE *In_ptr;	In_ptr = fopen(Inloc, "r");
-	// char Outloc[] = "data .out"; Outloc[4] = fname;
+		// char Outloc[] = "data .out"; Outloc[4] = fname;
 	FILE *Out_ptr;	Out_ptr = fopen(Outloc, "w");
 
     if (NULL == In_ptr) {
@@ -33,22 +33,31 @@ void fun_HW02a_InOut (char Inloc[], char Outloc[])	{
 		
 			// Kontrola dělení 0
 		if (Input2 == 0)	{
-			fprintf(Out_ptr,"Nedefinovany vysledek\n");	}
+			fprintf(Out_ptr,"Nedefinovany vysledek\n");
+		}
 		else	{
 			fprintf(Out_ptr,"Podil: %d / %d = %d\n", Input1, Input2, Input1 / Input2);	
-			}
+		}
 
 		double add = Input1 + Input2;
 		double procento = add / 2;
 		fprintf(Out_ptr,"Prumer: %.1lf", procento);
 	}
 
-		fclose(Out_ptr);
+	fclose(Out_ptr);
 }
+
 
 int main(int argc, char const *argv[])
 {	
 	
+	char* FileLoc[] = { "data\\pub01",
+						"data\\pub02",
+						"data\\pub03",
+						"data\\pub04"}; 
+
+	int FileNum = sizeof(FileLoc) / sizeof(FileLoc[0]);
+
 	char Inloc1[] = "data\\pub01.in"; char Outloc1[] = "data\\pub01.out";
 	char Inloc2[] = "data\\pub02.in"; char Outloc2[] = "data\\pub02.out";
 	char Inloc3[] = "data\\pub03.in"; char Outloc3[] = "data\\pub03.out";
