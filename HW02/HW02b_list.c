@@ -1,42 +1,48 @@
 
 #include <stdio.h>
-#include <math.h>
 #include <string.h>
 
 void border_1 (int digitA, int digitB, int digitC, int digitD)  {
                             
-                            printf("+");
+    printf("+");
     for (int i = 0; i < (6 + digitA); i++)  {
-        printf("-");    }
-                            printf("+");
+        printf("-");    
+    }
+    printf("+");
 
     for (int i = 0; i < (6 + digitB); i++)  {
-        printf("-");    }
-                            printf("+");
+        printf("-");    
+    }
+    printf("+");
 
     for (int i = 0; i < (6 + digitC); i++)  {
-        printf("-");    }
-                            printf("+");
+        printf("-");    
+    }
+    printf("+");
 
     for (int i = 0; i < (6 + digitD); i++)  {
-        printf("-");    }
-                            printf("+\n");
+        printf("-");    
     }
+    printf("+\n");
+}
+
 
 void border_2 (int size)    {
-        printf("+");
+
+    printf("+");
     for (int i = 0; i < size; i++)  {
         printf("-");
-    }   printf("+");
+    }   
+    printf("+");
 }    
 
 
 void state (char *koren, int size)    {
     
     printf("|");
-        for (int i = 0; i < (size - 3 - strlen(koren)); i++)    {
-    printf(" ");
-            }
+    for (int i = 0; i < (size - 3 - strlen(koren)); i++)    {
+        printf(" ");
+    }
     printf(koren);
     printf("   |\n");
 }
@@ -46,7 +52,8 @@ void results (int koefA, int koefB, int koefC, int dis) {
 }
 
 
-    digits (int koef)  {
+int digits (int koef)  {
+
         if (koef >= 0)  {
             int digit = 0;
             do   {  koef /= 10;
@@ -62,6 +69,7 @@ void results (int koefA, int koefB, int koefC, int dis) {
             return digit;
         }
     }
+
 
 void table (int koefA, int koefB, int koefC)    {
 
@@ -79,31 +87,32 @@ void table (int koefA, int koefB, int koefC)    {
     int size = 8*3 + 3 + digitA + digitB + digitC + digitD;
 
     if (dis < -999 || dis > 999)
-            printf("Diskriminant mimo povoleny interval!\n");
-        else if (dis == 0) {
-            border_1(digitA, digitB, digitC, digitD);
-            results(koefA, koefB, koefC, dis);
-            border_1(digitA, digitB, digitC, digitD);
-            state(koren_1, size);
-            border_2(size);
-        }
-        else if (dis > 0) {
-            border_1(digitA, digitB, digitC, digitD);
-            results(koefA, koefB, koefC, dis);
-            border_1(digitA, digitB, digitC, digitD);
-            state(koren_2, size);
-            border_2(size);
-        }
-        else if (dis < 0) {
-            border_1(digitA, digitB, digitC, digitD);
-            results(koefA, koefB, koefC, dis);
-            border_1(digitA, digitB, digitC, digitD);
-            state(koren_3, size);
-            border_2(size);
-        }
+        printf("Diskriminant mimo povoleny interval!\n");
 
-        printf("\n\n\n");
+    else if (dis == 0) {
+        border_1(digitA, digitB, digitC, digitD);
+        results(koefA, koefB, koefC, dis);
+        border_1(digitA, digitB, digitC, digitD);
+        state(koren_1, size);
+        border_2(size);
     }
+    else if (dis > 0) {
+        border_1(digitA, digitB, digitC, digitD);
+        results(koefA, koefB, koefC, dis);
+        border_1(digitA, digitB, digitC, digitD);
+        state(koren_2, size);
+        border_2(size);
+    }
+    else if (dis < 0) {
+        border_1(digitA, digitB, digitC, digitD);
+        results(koefA, koefB, koefC, dis);
+        border_1(digitA, digitB, digitC, digitD);
+        state(koren_3, size);
+        border_2(size);
+    }
+
+    printf("\n\n\n");
+}
 
 
 
