@@ -9,19 +9,21 @@ void fun_HW02a_InOut (char Inloc[], char Outloc[])	{
 	FILE *Out_ptr;	Out_ptr = fopen(Outloc, "w");
 
     if (NULL == In_ptr) {
-    printf("file can't be opened \n");
-    exit(1);	}
+		printf("file can't be opened \n");
+		exit(1);	
+	}
 
     		// Definice a inicializace inputu
 	int Input1;		fscanf(In_ptr, "%d", &Input1);
 			// Definice a inicializace outputu
     int Input2;		fscanf(In_ptr, "%d", &Input2);
-    											fclose(In_ptr);
+    			
+				fclose(In_ptr);
 
     		// Kontrola limitů												
 	if (Input1 < -10000 | Input1 > 10000 | Input2 < -10000 | Input2 > 10000) {
 		fprintf(Out_ptr,"Mimo interval");
-				}
+	}
 	else	{
 		fprintf(Out_ptr,"Desitkova soustava: %d %d\n",Input1, Input2);
 		fprintf(Out_ptr,"Sestnackova soustava: %x %x\n", Input1, Input2);
@@ -33,15 +35,15 @@ void fun_HW02a_InOut (char Inloc[], char Outloc[])	{
 		if (Input2 == 0)	{
 			fprintf(Out_ptr,"Nedefinovany vysledek\n");	}
 		else	{
-			fprintf(Out_ptr,"Podil: %d / %d = %d\n", Input1, Input2, Input1 / Input2);	}
+			fprintf(Out_ptr,"Podil: %d / %d = %d\n", Input1, Input2, Input1 / Input2);	
+			}
+
 		double add = Input1 + Input2;
 		double procento = add / 2;
 		fprintf(Out_ptr,"Prumer: %.1lf", procento);
-
-
 	}
-		fclose(Out_ptr);
 
+		fclose(Out_ptr);
 }
 
 int main(int argc, char const *argv[])
@@ -56,7 +58,6 @@ int main(int argc, char const *argv[])
 	fun_HW02a_InOut(Inloc2, Outloc2);
 	fun_HW02a_InOut(Inloc3, Outloc3);
 	fun_HW02a_InOut(Inloc4, Outloc4);
-
 
 	return 0;
 }
