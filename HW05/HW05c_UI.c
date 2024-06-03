@@ -1,23 +1,23 @@
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[])  {
+
     int let, chLen, var, spaces, i, j, k, l, m, n, o;
     spaces = chLen = i = j = k = l = m = n = o = 0;
     char inputData;
     char chNum [3][2];
     int koef[3] = {0, 0, 0};
+
     int koefA = 0;
     int koefB = 0;
 
-    char testArr[] = "5"; int pocet = 0; int listCount = 1;
- 
+    char testArr[] = "5"; int count = 0; int listCount = 1;
+
 
     // while (scanf("%c", &inputData) != EOF) {
-    while (pocet < listCount) {
-        inputData = testArr[pocet]; pocet++;
+    while (count < listCount) {
+        inputData = testArr[count]; count++;
 
         if (inputData == '\n') break;
         else if (!('0' <= inputData & inputData <= '9') & (inputData != ' ')) {
@@ -43,7 +43,9 @@ int main(int argc, char const *argv[])
         }
 
     }
+
     n=0; m=0;
+
     for (i = 0; i < 3; i++) {
         while (n < koef[m]) {
         printf("%c", chNum[m][n]);
